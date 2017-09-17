@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="perfil-bg">
+  <ion-row>
+    <ion-col col12 col-md-4 col-lg-2>
+      <ion-card>
+        <ion-card-header>Damián Quintero</ion-card-header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dami%C3%A1n_Quintero%2C_n%C3%BAmero_1_del_karate_mundial_en_la_modalidad_de_katas.jpg/220px-Dami%C3%A1n_Quintero%2C_n%C3%BAmero_1_del_karate_mundial_en_la_modalidad_de_katas.jpg">
+        <ion-card-content>
+          <div><ion-icon name="home">España</ion-icon></div>
+          <div><ion-icon name="call">3005297492</ion-icon></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <button ion-col col-6 col-md-3 offset-md-7 col-lg-2 offset-lg-8 ion-button color="secondary" round (click)="logout()">Cerrar sesión</button>
+  </ion-row>
+</ion-content>

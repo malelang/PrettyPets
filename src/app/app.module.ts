@@ -8,9 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
-
+import { RegistroPage} from '../pages/registro/registro';
+import {PerfilPage} from '../pages/perfil/perfil';
+import {VetsPage} from '../pages/vets/vets';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {IonicStorageModule} from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +23,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //    ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    RegistroPage,
+    PerfilPage,
+    VetsPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +40,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //    ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    RegistroPage,
+    PerfilPage,
+    VetsPage,
   ],
   providers: [
     StatusBar,
