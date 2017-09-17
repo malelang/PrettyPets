@@ -1,0 +1,35 @@
+page-login {
+    
+        .login-title{
+            font-family: Pacifico;
+            color: white;
+            font-size: 8em;
+        }
+    
+        .login-main{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    
+        .login-form{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    
+        .login-bg{
+            background-image: url("../../assets/img/login_bg3.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    
+        .text-input-wp{
+            border-color: white;
+        }
+    
+    
+    
+}
