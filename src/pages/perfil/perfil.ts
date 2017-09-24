@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {LoginPage} from '../login/login';
+import { UsuarioDataProvider} from '../../providers/users-data/usuario-data';
+import { Usuario} from '../../providers/users-data/usuario';
+import {MascotaDataProvider} from '../../providers/mascota-data/mascota-data';
+import {Mascota} from '../../providers/mascota-data/mascota';
 
 
 @Component({
@@ -10,8 +14,15 @@ import {LoginPage} from '../login/login';
 })
 export class PerfilPage {
 
+  usuarios: Usuario[]=[];
+  mascotas: Mascota[]=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public storage: Storage) {
+  public storage: Storage, public service: UsuarioDataProvider,
+  public service2:MascotaDataProvider) {
+
+    this.usuarios=service.data;
+    this.mascotas=service2.data;
+    //console.log(this.nav.id)
   }
 
   ionViewDidLoad() {
@@ -20,7 +31,7 @@ export class PerfilPage {
 
   logout(){
     this.storage.set("logged",false);
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.parent.parent.setRoot(LoginPage);
     
   }
 }

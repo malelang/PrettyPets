@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {HomePage} from '../home/home';
+import {TabsPage} from'../tabs/tabs';
 import {Storage} from '@ionic/storage';
+import {RegistroPage} from '../registro/registro';
+import {Usuario} from '../../providers/users-data/usuario';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
+  usuario:Usuario;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public storage: Storage) {
+    this.usuario=new Usuario;
   }
 
   ionViewDidLoad() {
@@ -18,8 +24,10 @@ export class LoginPage {
 
   login(){ 
     this.storage.set("logged",true);
-    this.navCtrl.setRoot(HomePage); //cada vez que yo haga login, voy a hacer que la pagina principal sea root
-    //sirve tambien para destruir la cola de paginas que tenía
+    this.navCtrl.setRoot(TabsPage); 
   }
 
+  register(){
+    this.navCtrl.push(RegistroPage);
+  }
 }

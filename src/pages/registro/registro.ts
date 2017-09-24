@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {AddMascotaPage} from '../add-mascota/add-mascota';
+import {Usuario} from '../../providers/users-data/usuario';
 
 
 @Component({
@@ -8,11 +10,20 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RegistroPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  usuario:Usuario;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams
+   ) {
+    this.usuario=new Usuario;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroPage');
+  }
+
+  goToSecondPage(){
+
+    this.navCtrl.push(AddMascotaPage);
   }
 
 }

@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 
-//import { AboutPage } from '../about/about';
-//import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+
+import {PerfilPage} from '../perfil/perfil';
+//import {Storage} from '@ionic/storage';
+import {VetsPage} from '../vets/vets';
+import {BitacoraPage} from '../bitacora/bitacora';
+import {ForumPage} from '../forum/forum';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  //tab2Root = AboutPage;
-  //tab3Root = ContactPage;
+  tab1Root = PerfilPage;
+  tab2Root= BitacoraPage;
+  tab3Root = VetsPage;
+  tab4Root = ForumPage;
+  
 
   constructor() {
 

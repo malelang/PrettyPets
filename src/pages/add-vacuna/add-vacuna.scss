@@ -1,0 +1,32 @@
+page-add-vacuna {
+    .add-vacuna-title{
+        font-family: Pacifico;
+        color: white;
+        font-size: 6em;
+    }
+
+    .add-vacuna-main{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .add-vacuna-form{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .add-vacuna-bg{
+        background-image: url("../../assets/img/add-vacuna_bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .text-input-wp{
+        border-color: white;
+    }
+    
+}

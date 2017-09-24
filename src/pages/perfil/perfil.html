@@ -8,13 +8,27 @@
 
 <ion-content padding class="perfil-bg">
   <ion-row>
-    <ion-col col12 col-md-4 col-lg-2>
-      <ion-card>
-        <ion-card-header>Damián Quintero</ion-card-header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dami%C3%A1n_Quintero%2C_n%C3%BAmero_1_del_karate_mundial_en_la_modalidad_de_katas.jpg/220px-Dami%C3%A1n_Quintero%2C_n%C3%BAmero_1_del_karate_mundial_en_la_modalidad_de_katas.jpg">
+    <ion-col col12 col-md-4 col-lg-2 *ngFor="let u of usuarios" >
+      <ion-card color="primary" margin-right margin-left margin-top>
+        <ion-card-header>{{u.nombre}}</ion-card-header>
+        <img src="{{u.imagen}}" alt="">
         <ion-card-content>
-          <div><ion-icon name="home">España</ion-icon></div>
-          <div><ion-icon name="call">3005297492</ion-icon></div>
+          <div><ion-icon name="home">{{u.direccion}}</ion-icon></div>
+          <div><ion-icon name="call">{{u.contacto}}</ion-icon></div>
+          <div><ion-icon name="help-buoy">{{u.edad}}</ion-icon></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col12 col-md-4 col-lg-2 *ngFor="let m of mascotas">
+      <ion-card color="secondary" margin-right margin-left margin-top>
+        <ion-card-header>{{m.nombre}}</ion-card-header>
+        <img src="{{m.imagen}}" alt="">
+        <ion-card-content>
+          <div><ion-icon name="analytics">{{m.raza}}</ion-icon></div>
+          
+          <div><ion-icon name="help-buoy">{{m.edad}}</ion-icon></div>
         </ion-card-content>
       </ion-card>
     </ion-col>

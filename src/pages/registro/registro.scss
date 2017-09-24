@@ -1,3 +1,28 @@
 page-registro {
+    .registro-bg{
+        background-image: url('https://previews.123rf.com/images/maximkostenko/maximkostenko1512/maximkostenko151200053/49669990-Huevos-de-Pascua-pintados-en-colores-pastel-sobre-fondo-blanco-de-madera-concepto-de-Pascua-Foto-de-archivo.jpg');
+        background-repeat : no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 
+    .register-form{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-main{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .register-title{
+        font-family: pacifico;
+        color: #182496;
+        font-size: 2em;
+        text-align: center;
+    }
 }

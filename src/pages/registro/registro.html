@@ -1,18 +1,99 @@
-<!--
-  Generated template for the RegistroPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
+  <ion-navbar color="primary">
 
-  <ion-navbar>
-    <ion-title>registro</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="registro-bg">
+  <form #form="ngForm">
+    <div class="register-main">
+      <h1 class="register-title" margin-top>Información Personal</h1>
+      <div class="register-form">
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+            <ion-item color="glass">
+              <ion-label color="dark" floating>Nombre y Apellido</ion-label>
+              <ion-input name="nombre" type="text" [(ngModel)]="usuario.nombre" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+            <ion-item color="glass">
+              <ion-label color="dark" floating>Dirección</ion-label>
+              <ion-input name="direccion" type="text" [(ngModel)]="usuario.direccion"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+            <ion-item color="glass">
+              <ion-label color="dark" floating>Numero de contacto</ion-label>
+              <ion-input name="contacto" type="text" [(ngModel)]="usuario.contacto" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
 
+          <ion-label col-6>Género</ion-label>
+          <ion-label col-5 offset-6>Edad</ion-label>
+
+        </ion-row>
+        <ion-row>
+
+          <ion-list col-6 radio-group no-lines [(ngModel)]="usuario.genero" name="genero" required>
+            <ion-item color="glass">
+              <ion-label color="dark">Femenino</ion-label>
+              <ion-radio ng-value="f"></ion-radio>
+            </ion-item>
+            <ion-item color="glass">
+              <ion-label color="dark">Masculino</ion-label>
+              <ion-radio ng-value="m"></ion-radio>
+            </ion-item>
+          </ion-list>
+
+          <ion-list col-5 offset-6>
+            <ion-item col-5 offset-6 color="primary" text="Pulse aqui">
+              <ion-label>Escoja su edad</ion-label>
+              <ion-select [(ngModel)]="usuario.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
+                <ion-option value=18>18</ion-option>
+                <ion-option value=19>19</ion-option>
+                <ion-option value=20>20</ion-option>
+                <ion-option value=21>21</ion-option>
+                <ion-option value=22>22</ion-option>
+                <ion-option value=23>23</ion-option>
+                <ion-option value=24>24</ion-option>
+                <ion-option value=25>25</ion-option>
+                <ion-option value=26>26</ion-option>
+                <ion-option value=27>27</ion-option>
+                <ion-option value=28>28</ion-option>
+                <ion-option value=29>29</ion-option>
+                <ion-option value=30>30</ion-option>
+                <ion-option value=31>31</ion-option>
+                <ion-option value=32>32</ion-option>
+                <ion-option value=33>33</ion-option>
+                <ion-option value=34>34</ion-option>
+                <ion-option value=35>35</ion-option>
+                <ion-option value=36>36</ion-option>
+                <ion-option value=37>37</ion-option>
+                <ion-option value=38>38</ion-option>
+                <ion-option value=39>39</ion-option>
+                <ion-option value=40>40</ion-option>
+                <ion-option value=41>41</ion-option>
+                <ion-option value=42>42</ion-option>
+                <ion-option value=43>43</ion-option>
+                <ion-option value=44>44</ion-option>
+                <ion-option value=45>45</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+        <ion-row>
+          <button col-4 offset-7 ion-button color="secondary" block (click)="goToSecondPage()" [disabled]="!form.valid">Siguiente</button>
+        </ion-row>
+      </div>
+    </div>
+  </form>
 </ion-content>

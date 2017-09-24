@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Agregar...</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="add-vacuna-bg">
+
+
+  <div class="add-vacuna-main">
+    <div class="add-vacuna-form">
+      <form #form="ngForm">
+        <h2>Agregar vacuna</h2>
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Fecha</ion-label>
+              <ion-input name="fecha" type="text" [(ngModel)]="vacuna.fecha" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Vacuna</ion-label>
+              <ion-input name="enfermedad" type="text" [(ngModel)]="vacuna.enfermedad" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Veterinario</ion-label>
+              <ion-input name="veterinario" type="text" [(ngModel)]="vacuna.veterinario" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <button ion-col col-5 offset-6 ion-button color="primary" round (click)="addv" [disabled]="!form.valid">Agregar</button>
+        </ion-row>
+      </form>
+      <br>
+      <form #form="ngForm">
+        <h2>Agregar desparasitación</h2>
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Fecha</ion-label>
+              <ion-input name="fecha" type="text" [(ngModel)]="parasito.fecha" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Peso</ion-label>
+              <ion-input name="peso" type="text" [(ngModel)]="parasito.peso" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Producto</ion-label>
+              <ion-input name="producto" type="text" [(ngModel)]="parasito.producto" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+            <ion-item color="dglass">
+              <ion-label fixed color="dark">Proxima desparasitación</ion-label>
+              <ion-input name="proxima" type="text" [(ngModel)]="parasito.proxima" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <button ion-col col-5 offset-6 ion-button color="primary" round (click)="addp" [disabled]="!form.valid">Agregar</button>
+        </ion-row>
+      </form>
+    </div>
+  </div>
+
+</ion-content>

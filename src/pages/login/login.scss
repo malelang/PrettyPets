@@ -2,8 +2,9 @@ page-login {
     
         .login-title{
             font-family: Pacifico;
+            
             color: white;
-            font-size: 8em;
+            font-size: 6em;
         }
     
         .login-main{
@@ -29,7 +30,10 @@ page-login {
         .text-input-wp{
             border-color: white;
         }
-    
+        
+        .no-scroll .scroll-content{
+            overflow: hidden;
+        }
     
     
 }
