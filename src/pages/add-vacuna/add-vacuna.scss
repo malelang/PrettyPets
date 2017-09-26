@@ -5,6 +5,18 @@ page-add-vacuna {
         font-size: 6em;
     }
 
+    .add-vacuna-subtitle{
+        font-family: Pacifico;
+        color: #3DADE0;
+        font-size: 2em;
+    }
+
+    .add-vacuna-subtitle-bis{
+        font-family: Pacifico;
+        color: #0F2129;
+        font-size: 2em;
+    }
+
     .add-vacuna-main{
         display: flex;
         flex-direction: column;
@@ -27,6 +39,11 @@ page-add-vacuna {
 
     .text-input-wp{
         border-color: white;
+    }
+
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+        display: none;
     }
     
 }

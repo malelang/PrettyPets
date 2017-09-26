@@ -1,12 +1,12 @@
 
 <ion-header>
   <ion-navbar color="secondary">
-    <ion-title>Bitacora</ion-title>
+    <ion-title>Bitácora</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-scroll>
-<ion-content padding class="bitacora-bg">
+
+<ion-content padding class="bitacora-bg ">
     <h1 class="bitacora-title" margin-top>Carnet de vacunación</h1>
     <br><br>
     <div class="col">
@@ -38,9 +38,10 @@
         <ion-col col-3>{{p.proxima}}</ion-col>
       </ion-row>
     </div>
+
+    <ion-fab right bottom>
+      <button ion-fab color="danger" (click)="goToAdd()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 </ion-content>
 
-<ion-fab right bottom>
-  <button ion-fab color="danger" (click)="goToAdd"><ion-icon name="add"></ion-icon></button>
-</ion-fab>
-</ion-scroll>
+
