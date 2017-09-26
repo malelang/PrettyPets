@@ -1,3 +1,20 @@
 page-vets {
+    .vet-bg{
+        background-image: url("../../assets/img/perfil_bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 
+    .vet-title{
+        font-family: pacifico;
+        color: #182496;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .col-vet{
+        background: #6BC9CC;
+        border:  solid black;
+        }
 }

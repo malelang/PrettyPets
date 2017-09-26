@@ -4,6 +4,7 @@ import {PerfilPage} from '../perfil/perfil';
 import {PerrosDataProvider} from '../../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../../providers/mascota-data/gatos-data';
 import {Mascota} from '../../providers/mascota-data/mascota';
+import {TabsPage} from '../tabs/tabs';
 
 @Component({
   selector: 'page-add-mascota',
@@ -29,7 +30,7 @@ export class AddMascotaPage {
   }
 
   goToProfile(){
-    this.navCtrl.setRoot(PerfilPage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
 }

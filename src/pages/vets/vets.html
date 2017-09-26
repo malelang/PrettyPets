@@ -1,13 +1,46 @@
-
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Veterinarios</ion-title>
+    <ion-title color="primary">Veterinarios</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="vet-bg">
+  <h1 class="vet-title" margin-top>¿Buscas un veterinario?</h1>
+  <ion-label>Tenemos algunos recomendados para ti</ion-label>
+  <div>
+    <ion-row>
+      <ion-col col12 col-md-4 col-lg-2 *ngFor="let v of veterinarios">
+        <ion-card color="secondary" margin-right margin-left margin-top>
+          <ion-card-header>{{u.nombre}}</ion-card-header>
+          <img src="{{u.imagen}}" alt="">
+          <ion-card-content>
+            <div>
+              <ion-icon name="home">{{u.direccion}}</ion-icon>
+            </div>
+            <div>
+              <ion-icon name="call">{{u.contacto}}</ion-icon>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="col-vet" margin-top>
+    <ion-label>Lista completa de veterinarios en Popayán</ion-label>
+    <br>
+    <ion-row>
+      <ion-col col-4>Nombre</ion-col>
+      <ion-col col-4>Dirección</ion-col>
+      <ion-col col-4>Numero de contacto</ion-col>
+
+    </ion-row>
+    <ion-row *ngFor="let p of parasitos">
+      <ion-col col-4>{{p.fecha}}</ion-col>
+      <ion-col col-4>{{p.peso}}</ion-col>
+      <ion-col col-4>{{p.producto}}</ion-col>
+
+    </ion-row>
+  </div>
 
 </ion-content>

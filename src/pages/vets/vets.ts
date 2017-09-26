@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the VetsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Vet} from '../../providers/vets-data/vet';
+import {VeterinarioDataProvider} from '../../providers/vets-data/vets-data';
 
 @Component({
   selector: 'page-vets',
@@ -14,7 +9,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class VetsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+veterinarios:Vet[]=[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+  public service: VeterinarioDataProvider) {
+    this.veterinarios=service.data;
   }
 
   ionViewDidLoad() {
