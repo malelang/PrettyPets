@@ -12,14 +12,14 @@
     <ion-row>
       <ion-col col12 col-md-4 col-lg-2 *ngFor="let v of veterinarios">
         <ion-card color="secondary" margin-right margin-left margin-top>
-          <ion-card-header>{{u.nombre}}</ion-card-header>
+          <ion-card-header>{{v.nombre}}</ion-card-header>
           <img src="{{u.imagen}}" alt="">
           <ion-card-content>
             <div>
-              <ion-icon name="home">{{u.direccion}}</ion-icon>
+              <ion-icon name="home">{{v.direccion}}</ion-icon>
             </div>
             <div>
-              <ion-icon name="call">{{u.contacto}}</ion-icon>
+              <ion-icon name="call">{{v.contacto}}</ion-icon>
             </div>
           </ion-card-content>
         </ion-card>
@@ -35,10 +35,10 @@
       <ion-col col-4>Numero de contacto</ion-col>
 
     </ion-row>
-    <ion-row *ngFor="let p of parasitos">
-      <ion-col col-4>{{p.fecha}}</ion-col>
-      <ion-col col-4>{{p.peso}}</ion-col>
-      <ion-col col-4>{{p.producto}}</ion-col>
+    <ion-row *ngFor="let v of veterinarios">
+      <ion-col col-4>{{v.nombre}}</ion-col>
+      <ion-col col-4>{{v.direccion}}</ion-col>
+      <ion-col col-4>{{v.contacto}}</ion-col>
 
     </ion-row>
   </div>
