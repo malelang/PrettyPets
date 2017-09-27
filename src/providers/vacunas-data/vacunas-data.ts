@@ -4,8 +4,8 @@ import{ Vacuna}from './vacuna';
 export class VacunaDataProvider {
 
   data:Vacuna[]= [
-    {fecha:'20/09/16',enfermedad:'Triple Viral',veterinario:'Arboleda'},
-    {fecha:'17/11/15', enfermedad:'Rabia',veterinario:'Noguera'},
+    {fecha:null,enfermedad:'Triple Viral',veterinario:'Arboleda'},
+    {fecha:null, enfermedad:'Rabia',veterinario:'Noguera'},
   ];
 
   constructor() {

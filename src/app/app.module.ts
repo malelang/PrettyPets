@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Calendar } from '@ionic-native/calendar';
 
 //import { AboutPage } from '../pages/about/about';
 //import { ContactPage } from '../pages/contact/contact';
@@ -42,7 +43,7 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp ),
     IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
@@ -65,6 +66,7 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Calendar,
     UsuarioDataProvider,
     MascotaDataProvider,
     PerrosDataProvider,

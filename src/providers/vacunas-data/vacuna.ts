@@ -1,7 +1,5 @@
 export class Vacuna{
-        public fecha:string;
+        public fecha:Date;
         public enfermedad: string;
-        public veterinario:string;
-        
-           
+        public veterinario:string;      
 }

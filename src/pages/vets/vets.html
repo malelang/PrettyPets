@@ -13,7 +13,7 @@
       <ion-col col12 col-md-4 col-lg-2 *ngFor="let v of veterinarios">
         <ion-card color="secondary" margin-right margin-left margin-top>
           <ion-card-header>{{v.nombre}}</ion-card-header>
-          <img src="{{u.imagen}}" alt="">
+          <img src="{{v.imagen}}" alt="">
           <ion-card-content>
             <div>
               <ion-icon name="home">{{v.direccion}}</ion-icon>
@@ -26,8 +26,12 @@
       </ion-col>
     </ion-row>
   </div>
+  <br>
+  <ion-label>Aquí va el mapa</ion-label>>
+  <br>
+  <ion-label>Lista completa de veterinarios en Popayán</ion-label>
   <div class="col-vet" margin-top>
-    <ion-label>Lista completa de veterinarios en Popayán</ion-label>
+    
     <br>
     <ion-row>
       <ion-col col-4>Nombre</ion-col>

@@ -1,10 +1,10 @@
 
 
 export class Parasito{
-    public fecha:string;
+    public fecha:Date;
     public peso: number;
     public producto:string;
-    public proxima:string;
+    public proxima:Date;
     
        
 }
