@@ -12,9 +12,9 @@
     <div class="col">
       
       <ion-row >
-        <ion-col col-4>Fecha</ion-col>
-        <ion-col col-4>Vacuna</ion-col>
-        <ion-col col-4>Doctor</ion-col>
+        <ion-col col-4 col-md-3 offset-md-1 col-lg-2 offset-lg-2>Fecha</ion-col>
+        <ion-col col-4 col-md-3 col-lg-2> Vacuna</ion-col>
+        <ion-col col-4 col-md-3 col-lg-2>Doctor</ion-col>
       </ion-row>
       <ion-row  *ngFor="let v of vacunas">
         <ion-col>{{v.fecha}}</ion-col>
@@ -23,6 +23,7 @@
       </ion-row>
     </div>
     <br><br>
+    <h2 class="bitacora-title" margin-top>Desparasitaciones</h2>
     <div class="col">
       
       <ion-row >
@@ -33,7 +34,7 @@
       </ion-row>
       <ion-row  *ngFor="let p of parasitos">
         <ion-col>{{p.fecha}}</ion-col>
-        <ion-col>{{p.peso}}</ion-col>
+        <ion-col>{{p.peso}} kg</ion-col>
         <ion-col>{{p.producto}}</ion-col>
         <ion-col col-3>{{p.proxima}}</ion-col>
       </ion-row>

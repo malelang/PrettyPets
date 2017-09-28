@@ -4,8 +4,8 @@ import{ Parasito}from './parasito';
 export class ParasitoDataProvider {
 
   data:Parasito[]= [
-    {fecha:null,peso: 10 ,producto:'ACME',proxima:null},
-    {fecha:null, peso:7, producto:'Quereme',proxima:null},
+    {fecha:new Date().toISOString(),peso: 10 ,producto:'ACME',proxima:null},
+    {fecha:new Date().toISOString(), peso:7, producto:'Quereme',proxima:null},
   ];
 
   constructor() {
