@@ -34,11 +34,48 @@ veterinarios:Vet[]=[];
 
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
+      zoom: 14,
       center: {lat: 2.44, lng: -76.59}
     });
+   
 
-    this.directionsDisplay.setMap(this.map);
+    var marker = new google.maps.Marker({
+      position: {lat: 2.446821, lng: -76.607528},
+      map: this.map,
+      title: 'Pelos y patas'
+    });
+
+    var marker2 = new google.maps.Marker({
+      position: {lat: 2.456445, lng:-76.595632},
+      map: this.map,
+      title: 'Cannis e Cattus'
+    });
+
+    var marker3 = new google.maps.Marker({
+      position: {lat: 2.450865, lng:-76.605617},
+      map: this.map,
+      title: 'Mascotas Veterinaria'
+    });
+
+    var marker4 = new google.maps.Marker({
+      position: {lat: 2.452565, lng:-76.605175},
+      map: this.map,
+      title: 'Animal Doctor'
+    });
+
+    var marker5 = new google.maps.Marker({
+      position: {lat: 2.455112, lng:-76.592548},
+      map: this.map,
+      title: 'Colitas Spa y Veterinaria'
+    });
+
+    var marker6 = new google.maps.Marker({
+      position: {lat: 2.481750, lng:-76.570782},
+      map: this.map,
+      title: 'Doctora Balcazar Veterinaria'
+    });
+
+  
   }
 
   calculateAndDisplayRoute() {
