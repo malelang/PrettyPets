@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Calendar } from '@ionic-native/calendar';
+
 
 //import { AboutPage } from '../pages/about/about';
 //import { ContactPage } from '../pages/contact/contact';
@@ -26,6 +26,8 @@ import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
 import {VeterinarioDataProvider} from '../providers/vets-data/vets-data';
 import {VacunaDataProvider} from '../providers/vacunas-data/vacunas-data';
 import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
+import {NgCalendarModule} from 'ionic2-calendar';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +42,10 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
     ForumPage,
     AddMascotaPage,
     AddVacunaPage,
+    
   ],
   imports: [
+    NgCalendarModule,
     BrowserModule,
     IonicModule.forRoot(MyApp ),
     IonicStorageModule.forRoot(),
@@ -61,12 +65,13 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
     ForumPage,
     AddMascotaPage,
     AddVacunaPage,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Calendar,
+    
     UsuarioDataProvider,
     MascotaDataProvider,
     PerrosDataProvider,

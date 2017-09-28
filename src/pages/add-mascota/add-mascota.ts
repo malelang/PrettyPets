@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {PerfilPage} from '../perfil/perfil';
+
 import {PerrosDataProvider} from '../../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../../providers/mascota-data/gatos-data';
 import {Mascota} from '../../providers/mascota-data/mascota';

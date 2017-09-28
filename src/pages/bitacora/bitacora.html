@@ -38,10 +38,23 @@
         <ion-col col-3>{{p.proxima}}</ion-col>
       </ion-row>
     </div>
+    <br><br>
 
-    <ion-fab right bottom>
-      <button ion-fab color="danger" (click)="goToAdd()"><ion-icon name="add"></ion-icon></button>
-    </ion-fab>
+   <calendar [eventSource]="eventSource"
+   [calendarMode]="calendar.mode"
+   [currentDate]="calendar.currentDate"
+   (onEventSelected)="onEventSelected($event)"
+   (onTitleChanged)="onViewTitleChanged($event)"
+   (onTimeSelected)="onTimeSelected($event)"
+   step="30"
+   class="calendar">
+   </calendar>
+   <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="goToAdd()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-fab left bottom>
+    <button ion-fab color="dark" (click)="addEvent()"><ion-icon name="calendar"></ion-icon></button>
+  </ion-fab>
 </ion-content>
 
 
