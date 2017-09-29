@@ -1,6 +1,6 @@
 {
   "name": "PrettyPets",
-  "app_id": "",
+  "app_id": "7143ceaa",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
