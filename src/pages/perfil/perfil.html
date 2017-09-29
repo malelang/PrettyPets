@@ -8,29 +8,33 @@
 
 <ion-content padding class="perfil-bg">
   <ion-row>
-    <ion-col col12 col-md-4 col-lg-2 *ngFor="let u of usuarios" >
-      <ion-card color="primary" margin-right margin-left margin-top>
-        <ion-card-header>{{u.nombre}}</ion-card-header>
-        <img src="{{u.imagen}}" alt="">
-        <ion-card-content>
-          <div><ion-icon name="home">{{u.direccion}}</ion-icon></div>
-          <div><ion-icon name="call">{{u.contacto}}</ion-icon></div>
-          <div><ion-icon name="help-buoy">{{u.edad}}</ion-icon></div>
-        </ion-card-content>
+    <ion-col col-6 offset-1 col-md-4 offset-md-2 col-lg-4 offset-lg-3 >
+      <ion-card  margin-right margin-left>
+        <img src="{{usuario1.imagen}}" alt="">
       </ion-card>
     </ion-col>
+      
+    <ion-col col-5 col-md-4 offset-md-1 col-lg-3 offset-lg-1>
+        <h2 class="perfil-title">{{usuario1.nombre}}</h2>
+        <ion-icon name="home"> {{usuario1.direccion}} </ion-icon>
+        <br><br>
+        <ion-icon name="call"> {{usuario1.contacto}} </ion-icon>
+        <br><br>
+        <ion-icon name="help-buoy"> {{usuario1.edad}} años</ion-icon>
+    </ion-col> 
   </ion-row>
   <ion-row>
-    <ion-col col12 col-md-4 col-lg-2 *ngFor="let m of mascotas">
-      <ion-card color="secondary" margin-right margin-left margin-top>
-        <ion-card-header>{{m.nombre}}</ion-card-header>
-        <img src="{{m.imagen}}" alt="">
-        <ion-card-content>
-          <div><ion-icon name="analytics">{{m.raza}}</ion-icon></div>
-          
-          <div><ion-icon name="help-buoy">{{m.edad}}</ion-icon></div>
-        </ion-card-content>
+    <ion-col col-6 offset-1 col-md-4 offset-md-2 col-lg-4 offset-lg-3>
+      <ion-card margin-right margin-left>
+        <img src="{{mascota1.imagen}}" alt="">
       </ion-card>
+    </ion-col>
+
+    <ion-col col-5 col-md-4 offset-md-1 col-lg-3 offset-lg-1>
+      <h3 class="mascota-title"> {{mascota1.nombre}}</h3>
+         <ion-icon name="analytics"> {{ mascota1.raza}}</ion-icon>
+          <br>
+        <ion-icon name="help-buoy"> {{ mascota1.edad}} años</ion-icon>    
     </ion-col>
   </ion-row>
   <ion-row>

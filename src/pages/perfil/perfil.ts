@@ -16,12 +16,16 @@ export class PerfilPage {
 
   usuarios: Usuario[]=[];
   mascotas: Mascota[]=[];
+  usuario1: Usuario;
+  mascota1: Mascota;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public storage: Storage, public service: UsuarioDataProvider,
   public service2:MascotaDataProvider) {
 
     this.usuarios=service.data;
     this.mascotas=service2.data;
+    this.usuario1=this.usuarios[1];
+    this.mascota1=this.mascotas[1];
     //console.log(this.nav.id)
   }
 
