@@ -33,7 +33,7 @@
   <div #map id="map"></div>
 
   <br>
-  <ion-label>Lista completa de veterinarios en Popayán</ion-label>
+  <ion-label class="vet-title">Lista completa de veterinarios</ion-label>
   <div class="col-vet" margin-top>
 
     <br>
@@ -50,5 +50,8 @@
 
     </ion-row>
   </div>
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="goToAddVet()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>

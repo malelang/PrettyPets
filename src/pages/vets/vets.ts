@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {Vet} from '../../providers/vets-data/vet';
 import {VeterinarioDataProvider} from '../../providers/vets-data/vets-data';
 import { IonicPage } from 'ionic-angular';
+import {AddVetPage} from '../add-vet/add-vet';
 
 declare var google;
 

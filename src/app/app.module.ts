@@ -17,6 +17,7 @@ import {BitacoraPage} from '../pages/bitacora/bitacora';
 import {ForumPage } from '../pages/forum/forum';
 import {AddMascotaPage} from '../pages/add-mascota/add-mascota';
 import {AddVacunaPage} from '../pages/add-vacuna/add-vacuna';
+import {AddVetPage} from '../pages/add-vet/add-vet';
 import {UsuarioDataProvider} from '../providers/users-data/usuario-data';
 import {MascotaDataProvider} from '../providers/mascota-data/mascota-data';
 import {PerrosDataProvider} from '../providers/mascota-data/perros-data';
@@ -24,6 +25,8 @@ import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
 import {VeterinarioDataProvider} from '../providers/vets-data/vets-data';
 import {VacunaDataProvider} from '../providers/vacunas-data/vacunas-data';
 import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
+import {VetDaoProvider} from '../providers/vets-data/vet-dao';
+import {DatabaseConnectionProvider} from '../providers/database-connection/database-connection';
 import {NgCalendarModule} from 'ionic2-calendar';
 
 
@@ -40,6 +43,7 @@ import {NgCalendarModule} from 'ionic2-calendar';
     ForumPage,
     AddMascotaPage,
     AddVacunaPage,
+    AddVetPage,
     
   ],
   imports: [
@@ -63,7 +67,7 @@ import {NgCalendarModule} from 'ionic2-calendar';
     ForumPage,
     AddMascotaPage,
     AddVacunaPage,
-    
+    AddVetPage,
   ],
   providers: [
     StatusBar,
@@ -77,6 +81,8 @@ import {NgCalendarModule} from 'ionic2-calendar';
     VeterinarioDataProvider,
     VacunaDataProvider,
     ParasitoDataProvider,
+    DatabaseConnectionProvider,
+    VetDaoProvider,
   ]
 })
 export class AppModule {}
