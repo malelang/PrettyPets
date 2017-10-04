@@ -1,18 +1,33 @@
-<!--
-  Generated template for the AddVetPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
+    
+      <ion-navbar color="secondary">
+        <ion-title>Agregar veterinario</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding class="add-vet-bg">
+    
+      <form #form="ngForm">
+    
+        <ion-item>
+          <ion-label floating>Nombre</ion-label>
+          <ion-input name="nombre" type="text" [(ngModel)]="veterinario.nombre" required></ion-input>
+        </ion-item>
+    
+        <ion-item >
+          <ion-label floating>Dirección</ion-label>
+          <ion-input name="direccion" type="text" [(ngModel)]="veterinario.direccion" required></ion-input>
+        </ion-item>
 
-  <ion-navbar>
-    <ion-title>add-vet</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+        <ion-item margin-bottom>
+            <ion-label floating>Número de contacto</ion-label>
+            <ion-input name="contacto" type="text" [(ngModel)]="veterinario.contacto" required></ion-input>
+          </ion-item>
+    
+        <button ion-button block full margin-top (click)="save()" [disabled]="!form.valid"> Guardar </button>
+    
+      </form>
+    
+    </ion-content>

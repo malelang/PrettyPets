@@ -4,6 +4,7 @@ import {Vet} from '../../providers/vets-data/vet';
 import {VeterinarioDataProvider} from '../../providers/vets-data/vets-data';
 import { IonicPage } from 'ionic-angular';
 import {AddVetPage} from '../add-vet/add-vet';
+import {VetDaoProvider} from '../../providers/vets-data/vet-dao';
 
 declare var google;
 
@@ -21,16 +22,31 @@ export class VetsPage {
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
 
-veterinarios:Vet[]=[];
+  veterinarios:Vet[]=[];
+  vets:Vet[]=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-  public service: VeterinarioDataProvider) {
+  public service: VeterinarioDataProvider,
+  public dao: VetDaoProvider) {
     this.veterinarios=service.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VetsPage');
     this.initMap();
+  }
+
+  loadVets(){
+    this.dao.all().then(data=>this.vets=data);
+  }
+
+  goToAddVet(){
+    this.navCtrl.push(AddVetPage);
+  }
+
+  ionViewDidEnter() {
+    this.dao.ready()
+      .then(() => this.loadVets());
   }
 
   initMap() {

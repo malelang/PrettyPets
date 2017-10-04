@@ -43,13 +43,14 @@
       <ion-col col-4>Numero de contacto</ion-col>
 
     </ion-row>
-    <ion-row *ngFor="let v of veterinarios">
-      <ion-col col-4>{{v.nombre}}</ion-col>
-      <ion-col col-4>{{v.direccion}}</ion-col>
-      <ion-col col-4>{{v.contacto}}</ion-col>
+    <ion-row *ngFor="let u of vets">
+      <ion-col col-4>{{u.nombre}}</ion-col>
+      <ion-col col-4>{{u.direccion}}</ion-col>
+      <ion-col col-4>{{u.contacto}}</ion-col>
 
     </ion-row>
   </div>
+  <label>Ingresa tus veterinarios</label>
   <ion-fab right bottom>
     <button ion-fab color="danger" (click)="goToAddVet()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>

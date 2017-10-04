@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AddVetPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {VetDaoProvider} from '../../providers/vets-data/vet-dao';
+import {Vet} from '../../providers/vets-data/vet';
 
 @Component({
   selector: 'page-add-vet',
@@ -14,11 +9,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AddVetPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  veterinario: Vet;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dao: VetDaoProvider) {
+    this.veterinario = new Vet();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddVetPage');
+  save() {
+    this.dao.insert(this.veterinario)
+      .then(res => this.navCtrl.pop());
   }
 
 }

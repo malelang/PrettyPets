@@ -9,9 +9,9 @@ export class DatabaseConnectionProvider {
   constructor() { }
 
   getConnection(): Promise<SQLiteObject> {
-    if(this.db){
+    if(this.db){ //si la db no es nula, devuelvala
       return Promise.resolve(this.db);
-    }else{
+    }else{  //si es nula, la conecto y me devuelvo
       const sqlite = new SQLite();
       return sqlite.create({
         name: 'vets.db',
