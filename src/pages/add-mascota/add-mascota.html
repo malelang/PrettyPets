@@ -38,7 +38,7 @@
           </ion-list>
 
           <ion-list col-5 offset-6>
-            <ion-item col-5 offset-6 color="primary" margin-top>
+            <ion-item col-5 offset-6 color="dglass" margin-top>
               <ion-label>Escoja la edad de su mascota</ion-label>
               <ion-select [(ngModel)]="mascota.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
                 <ion-option value=0>menor que 1 año</ion-option>
@@ -76,7 +76,7 @@
           </ion-list>
 
 
-          <ion-list ng-if="mascota.tipo == 'g' " col-3 offset-6>
+          <ion-list *ngIf="mascota.tipo == 'g' " col-3 offset-6>
             <ion-item col-5 offset-6 color="primary" margin-top>
               <ion-label>Escoja la raza de su gato</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
@@ -87,7 +87,7 @@
 
 
 
-          <ion-list ng-if="mascota.tipo == 'p'" col-3 offset-6>
+          <ion-list *ngIf="mascota.tipo == 'p'" col-3 offset-6>
             <ion-item col-5 offset-6 color="primary" margin-top>
               <ion-label>Escoja la raza de su perro</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
