@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="primary" hideBackButton>
 
   </ion-navbar>
 </ion-header>
@@ -13,7 +13,7 @@
       <div class="add-mascota-form">
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
-            <ion-item color="glass">
+            <ion-item color="dglass">
               <ion-label color="dark" floating>Nombre</ion-label>
               <ion-input name="nombre" type="text" [(ngModel)]="mascota.nombre" required></ion-input>
             </ion-item>
@@ -21,12 +21,8 @@
         </ion-row>
 
         <ion-row>
-          <ion-label col-6 margin-bottom>Sexo</ion-label>
-          <ion-label col-5 offset-6 margin-bottom>Edad</ion-label>
-        </ion-row>
-
-        <ion-row>
-          <ion-list col-6 radio-group no-lines [(ngModel)]="mascota.sexo" name="sexo" required>
+          <ion-label col-5 offset-1 margin-bottom color="dark">Sexo</ion-label>
+          <ion-list col-6 offset-5 radio-group no-lines [(ngModel)]="mascota.sexo" name="sexo" required>
             <ion-item color="glass" margin-top>
               <ion-label color="dark">Hembra</ion-label>
               <ion-radio value="f"></ion-radio>
@@ -36,10 +32,13 @@
               <ion-radio value="m"></ion-radio>
             </ion-item>
           </ion-list>
+        </ion-row>
 
-          <ion-list col-5 offset-6>
-            <ion-item col-5 offset-6 color="dglass" margin-top>
-              <ion-label>Escoja la edad de su mascota</ion-label>
+        <ion-row>
+          <ion-label col-3 offset-1 margin-bottom color="dark">Edad</ion-label>
+          
+            <ion-item col-8 offset-4 color="dglass" margin-top>
+              <ion-label color="dark">Escoja la edad de su mascota</ion-label>
               <ion-select [(ngModel)]="mascota.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
                 <ion-option value=0>menor que 1 año</ion-option>
                 <ion-option value=1>1 año </ion-option>
@@ -56,50 +55,47 @@
                 <ion-option value=12>12 años</ion-option>
               </ion-select>
             </ion-item>
-          </ion-list>
+          
         </ion-row>
         <ion-row>
-          <ion-label col-6>Animal</ion-label>
-          <ion-label col-5 offset-6> Raza </ion-label>
+          <ion-label col-6 color="dark">Animal</ion-label>
+          <ion-list col-5 offset-6 radio-group no-lines [(ngModel)]="mascota.tipo" name="tipo" required>
+              <ion-item color="dglass" margin-top>
+                <ion-label color="dark">Gato</ion-label>
+                <ion-radio value="g" checked></ion-radio>
+              </ion-item>
+              <ion-item color="dglass">
+                <ion-label color="dark">Perro</ion-label>
+                <ion-radio value="p"></ion-radio>
+              </ion-item>
+            </ion-list>
         </ion-row>
 
         <ion-row>
-          <ion-list col-5 radio-group no-lines [(ngModel)]="mascota.tipo" name="tipo" required>
-            <ion-item color="glass" margin-top>
-              <ion-label color="dark">Gato</ion-label>
-              <ion-radio value="g" checked></ion-radio>
-            </ion-item>
-            <ion-item color="glass">
-              <ion-label color="dark">Perro</ion-label>
-              <ion-radio value="p"></ion-radio>
-            </ion-item>
-          </ion-list>
-
-
-          <ion-list *ngIf="mascota.tipo == 'g' " col-3 offset-6>
-            <ion-item col-5 offset-6 color="primary" margin-top>
-              <ion-label>Escoja la raza de su gato</ion-label>
+          <ion-label col-3 color="dark"> Raza </ion-label>
+          
+            <ion-item *ngIf="mascota.tipo == 'g'" col-8 offset-4 color="dglass" margin-top>
+              <ion-label color="dark">Escoja la raza de su gato</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
                 <ion-option *ngFor="let g of razagatos" [value]="g">{{g}}</ion-option>
               </ion-select>
             </ion-item>
-          </ion-list>
+        
 
-
-
-          <ion-list *ngIf="mascota.tipo == 'p'" col-3 offset-6>
-            <ion-item col-5 offset-6 color="primary" margin-top>
-              <ion-label>Escoja la raza de su perro</ion-label>
+          
+            <ion-item *ngIf="mascota.tipo == 'p'" col-8 offset-4 color="dglass" margin-top>
+              <ion-label color="dark">Escoja la raza de su perro</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
                 <ion-option *ngFor="let p of razaperros" [value]="p">{{p}}</ion-option>
               </ion-select>
             </ion-item>
-          </ion-list>
+          
 
         </ion-row>
 
         <ion-row>
-          <button col-4 offset-7 ion-button color="secondary" round (click)="goToProfile()" [disabled]="!form.valid">Finalizar</button>
+          <button col-4 offset-1 ion-button color="dglass" round (click)="goToLogin()">Cancelar</button>
+          <button col-4 offset-1 ion-button color="secondary" round (click)="goToProfile()" [disabled]="!form.valid">Finalizar</button>
         </ion-row>
       </div>
     </div>

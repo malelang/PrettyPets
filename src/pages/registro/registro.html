@@ -13,7 +13,7 @@
       <div class="register-form">
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
-            <ion-item color="glass">
+            <ion-item color="dglass">
               <ion-label color="dark" floating>Nombre y Apellido</ion-label>
               <ion-input name="nombre" type="text" [(ngModel)]="usuario.nombre" required></ion-input>
             </ion-item>
@@ -21,7 +21,7 @@
         </ion-row>
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
-            <ion-item color="glass">
+            <ion-item color="dglass">
               <ion-label color="dark" floating>Dirección</ion-label>
               <ion-input name="direccion" type="text" [(ngModel)]="usuario.direccion"></ion-input>
             </ion-item>
@@ -29,7 +29,7 @@
         </ion-row>
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
-            <ion-item color="glass">
+            <ion-item color="dglass">
               <ion-label color="dark" floating>Numero de contacto</ion-label>
               <ion-input name="contacto" type="text" [(ngModel)]="usuario.contacto" required></ion-input>
             </ion-item>
@@ -44,7 +44,7 @@
         <ion-row>
 
           <ion-list col-6 radio-group no-lines [(ngModel)]="usuario.genero" name="genero" required>
-            <ion-item color="glass">
+            <ion-item color="dglass">
               <ion-label color="dark">Femenino</ion-label>
               <ion-radio ng-value="f"></ion-radio>
             </ion-item>
@@ -55,7 +55,7 @@
           </ion-list>
 
           <ion-list col-5 offset-6>
-            <ion-item col-5 offset-6 color="primary" text="Pulse aqui">
+            <ion-item col-5 offset-6 color="light" text="Pulse aqui">
               <ion-label>Escoja su edad</ion-label>
               <ion-select [(ngModel)]="usuario.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
                 <ion-option value=18>18</ion-option>
