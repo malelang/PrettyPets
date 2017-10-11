@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>Perfil</ion-title>
@@ -7,55 +6,54 @@
 
 
 <ion-content padding class="perfil-bg">
-  
+
   <ion-refresher (ionRefresh)="doRefresh($event)" class="perfil-bg">
-    <ion-refresher-content
-      pullingText = "Desliza para recargar"
-      refreshingText="Recargando ..."
-    ></ion-refresher-content>
-  </ion-refresher> 
+    <ion-refresher-content pullingText="Desliza para recargar" refreshingText="Recargando ..."></ion-refresher-content>
+  </ion-refresher>
   <ion-row *ngFor="let d of data">
     <ion-col col-6 offset-1 col-md-4 offset-md-2 col-lg-4 offset-lg-3>
       <div class="marco">
-      <ion-card>
-        <img src="{{d.imagen}}" alt="">
-      </ion-card>
+        <ion-card>
+          <img src="{{d.imagen}}" alt="">
+        </ion-card>
       </div>
     </ion-col>
 
     <ion-col col-5 col-md-4 offset-md-1 col-lg-3 offset-lg-1>
       <h3 class="mascota-title"> {{d.nombre}}</h3>
-         <ion-icon name="analytics"> {{ d.raza}}</ion-icon>
+      <ion-icon name="analytics"> {{ d.raza}}</ion-icon>
+      <br>
+      <ion-icon name="help-buoy"> {{ d.edad}} años</ion-icon>
+      <br>
+      <ion-icon *ngIf="d.sexo=='f'" name="transgender">Hembra</ion-icon>
+        <ion-icon *ngIf="d.sexo=='m'" name="transgender">Macho</ion-icon>
           <br>
-        <ion-icon name="help-buoy"> {{ d.edad}} años</ion-icon>
-          <br>
-        <ion-icon *ngIf="d.sexo=='f'" name="transgender">Hembra</ion-label>     
-        <ion-icon *ngIf="d.sexo=='m'" name="transgender">Macho</ion-label>
-          <br>
-        <ion-icon *ngIf="d.tipo=='g'" name="github">Gato</ion-label>     
-        <ion-icon *ngIf="d.sexo=='p'" name="github">Perro</ion-label>
+          <ion-icon *ngIf="d.tipo=='g'" name="github">Gato</ion-icon>
+          <ion-icon *ngIf="d.sexo=='p'" name="github">Perro</ion-icon>
     </ion-col>
   </ion-row>
-  
-<!--  <h1 class="perfil-title">Mi dueño es: </h1>
-  <ion-row>
-      <ion-col col-6 offset-1 col-md-4 offset-md-2 col-lg-4 offset-lg-3 >
-        <ion-card  margin-right margin-left>
-          <img src="{{usuario1.imagen}}" alt="">
-        </ion-card>
-      </ion-col>
-        
-      <ion-col col-5 col-md-4 offset-md-1 col-lg-3 offset-lg-1>
-          <h2 class="perfil-title">{{usuario1.nombre}}</h2>
-          <ion-icon name="home"> {{usuario1.direccion}} </ion-icon>
-          <br><br>
-          <ion-icon name="help-buoy"> {{usuario1.edad}} años </ion-icon>
-          <br><br>
-          <ion-icon name="call"> {{usuario1.contacto}}</ion-icon>
-      </ion-col> 
-    </ion-row> -->
 
-    <h4 class="perfil-title"> Galería </h4>
+  <h1 class="perfil-title">Mi dueño es: </h1>
+  <ion-row *ngFor="let u of datausers">
+    <ion-col col-6 offset-1 col-md-4 offset-md-2 col-lg-4 offset-lg-3>
+      <ion-card margin-right margin-left>
+        <img src="{{u.imagen}}" alt="">
+      </ion-card>
+    </ion-col>
+
+    <ion-col col-5 col-md-4 offset-md-1 col-lg-3 offset-lg-1>
+      <h2 class="perfil-title">{{u.nombre}}</h2>
+      <ion-icon name="home"> {{u.direccion}} </ion-icon>
+      <br>
+      <br>
+      <ion-icon name="help-buoy"> {{u.edad}} años </ion-icon>
+      <br>
+      <br>
+      <ion-icon name="call"> {{u.contacto}}</ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <h4 class="perfil-title"> Galería </h4>
 
   <ion-row>
     <button ion-col col-6 col-md-3 offset-md-7 col-lg-2 offset-lg-8 ion-button color="secondary" round (click)="logout()">Cerrar sesión</button>

@@ -29,6 +29,7 @@ import {VetDaoProvider} from '../providers/vets-data/vet-dao';
 import {DatabaseConnectionProvider} from '../providers/database-connection/database-connection';
 import {NgCalendarModule} from 'ionic2-calendar';
 import { MascotaProvider } from '../providers/mascota/mascota';
+import { UsuarioProvider } from '../providers/usuario/usuario';
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { MascotaProvider } from '../providers/mascota/mascota';
     DatabaseConnectionProvider,
     VetDaoProvider,
     MascotaProvider,
+    UsuarioProvider,
   ]
 })
 export class AppModule {}

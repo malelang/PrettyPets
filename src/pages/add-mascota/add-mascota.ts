@@ -55,6 +55,7 @@ export class AddMascotaPage {
     let toast=this.toastCtrl.create({
       message: msg,
       duration: 3000,
+      position:"top",
     });
     toast.present();
   }
