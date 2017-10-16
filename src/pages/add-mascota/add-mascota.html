@@ -72,8 +72,8 @@
         </ion-row>
 
         <ion-row>
+
           <ion-label col-3 color="dark"> Raza </ion-label>
-          
             <ion-item *ngIf="mascota.tipo == 'g'" col-8 offset-4 color="dglass" margin-top>
               <ion-label color="dark">Escoja la raza de su gato</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
@@ -81,16 +81,21 @@
               </ion-select>
             </ion-item>
         
-
-          
             <ion-item *ngIf="mascota.tipo == 'p'" col-8 offset-4 color="dglass" margin-top>
               <ion-label color="dark">Escoja la raza de su perro</ion-label>
               <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
                 <ion-option *ngFor="let p of razaperros" [value]="p">{{p}}</ion-option>
               </ion-select>
             </ion-item>
-          
+        </ion-row>
 
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+            <ion-item color="dglass">
+              <ion-label color="dark" floating>Imagen(URL):Opcional</ion-label>
+              <ion-input name="imagen" type="text" [(ngModel)]="mascota.imagen"></ion-input>
+            </ion-item>
+          </ion-col>
         </ion-row>
 
         <ion-row>

@@ -18,8 +18,7 @@ import {ForumPage } from '../pages/forum/forum';
 import {AddMascotaPage} from '../pages/add-mascota/add-mascota';
 import {AddVacunaPage} from '../pages/add-vacuna/add-vacuna';
 import {AddVetPage} from '../pages/add-vet/add-vet';
-import {UsuarioDataProvider} from '../providers/users-data/usuario-data';
-import {MascotaDataProvider} from '../providers/mascota-data/mascota-data';
+
 import {PerrosDataProvider} from '../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
 import {VeterinarioDataProvider} from '../providers/vets-data/vets-data';
@@ -28,8 +27,9 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
 import {VetDaoProvider} from '../providers/vets-data/vet-dao';
 import {DatabaseConnectionProvider} from '../providers/database-connection/database-connection';
 import {NgCalendarModule} from 'ionic2-calendar';
-import { MascotaProvider } from '../providers/mascota/mascota';
-import { UsuarioProvider } from '../providers/usuario/usuario';
+
+import { SaveDataProvider } from '../providers/save-data/save-data';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
 
 
 @NgModule({
@@ -76,9 +76,6 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    
-    UsuarioDataProvider,
-    MascotaDataProvider,
     PerrosDataProvider,
     GatosDataProvider,
     VeterinarioDataProvider,
@@ -86,8 +83,9 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
     ParasitoDataProvider,
     DatabaseConnectionProvider,
     VetDaoProvider,
-    MascotaProvider,
-    UsuarioProvider,
+   
+    SaveDataProvider,
+    LoginServiceProvider,
   ]
 })
 export class AppModule {}

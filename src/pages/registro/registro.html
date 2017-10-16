@@ -15,7 +15,7 @@
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
             <ion-item color="dglass">
               <ion-label color="dark" floating>Nombre y Apellido</ion-label>
-              <ion-input name="nombre" type="text" [(ngModel)]="usuario.nombre" required></ion-input>
+              <ion-input name="nombre" type="text" [(ngModel)]="user.nombre" required></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -23,7 +23,7 @@
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
             <ion-item color="dglass">
               <ion-label color="dark" floating>Dirección</ion-label>
-              <ion-input name="direccion" type="text" [(ngModel)]="usuario.direccion"></ion-input>
+              <ion-input name="direccion" type="text" [(ngModel)]="user.direccion"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -31,25 +31,25 @@
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
             <ion-item color="dglass">
               <ion-label color="dark" floating>Numero de contacto</ion-label>
-              <ion-input name="contacto" type="text" [(ngModel)]="usuario.contacto" required></ion-input>
+              <ion-input name="contacto" type="text" [(ngModel)]="user.contacto" required></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
-        <ion-row>
+        
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
             <ion-item color="dglass">
               <ion-label color="dark" floating>Escoge tu nombre de usuario</ion-label>
-              <ion-input name="username" type="text" [(ngModel)]="usuario.username" required></ion-input>
+              <ion-input name="username" type="text" [(ngModel)]="user.username" required></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
-        <ion-row>
+       
         <ion-row>
           <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
             <ion-item color="dglass">
               <ion-label color="dark" floating>Contraseña</ion-label>
-              <ion-input name="password" type="password" [(ngModel)]="usuario.password" required></ion-input>
+              <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -61,21 +61,21 @@
         </ion-row>
         <ion-row>
 
-          <ion-list col-6 radio-group no-lines [(ngModel)]="usuario.genero" name="genero" required>
+          <ion-list col-6 radio-group no-lines [(ngModel)]="user.genero" name="genero" required>
             <ion-item color="dglass">
               <ion-label color="dark">Femenino</ion-label>
-              <ion-radio ng-value="f"></ion-radio>
+              <ion-radio value="f"></ion-radio>
             </ion-item>
             <ion-item color="glass">
               <ion-label color="dark">Masculino</ion-label>
-              <ion-radio ng-value="m"></ion-radio>
+              <ion-radio value="m"></ion-radio>
             </ion-item>
           </ion-list>
 
           <ion-list col-5 offset-6>
             <ion-item col-5 offset-6 color="light" text="Pulse aqui">
               <ion-label>Escoja su edad</ion-label>
-              <ion-select [(ngModel)]="usuario.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
+              <ion-select [(ngModel)]="user.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
                 <ion-option value=18>18</ion-option>
                 <ion-option value=19>19</ion-option>
                 <ion-option value=20>20</ion-option>
@@ -107,6 +107,14 @@
               </ion-select>
             </ion-item>
           </ion-list>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+            <ion-item color="dglass">
+              <ion-label color="dark" floating>Imagen(URL):Opcional</ion-label>
+              <ion-input name="imagen" type="text" [(ngModel)]="user.imagen"></ion-input>
+            </ion-item>
+          </ion-col>
         </ion-row>
         <ion-row>
           <button col-4 offset-7 ion-button color="secondary" block (click)="goToSecondPage()" [disabled]="!form.valid">Siguiente</button>

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import {AddMascotaPage} from '../add-mascota/add-mascota';
-//import {Usuario} from '../../providers/users-data/usuario';
-import {UsuarioProvider, Usuario} from '../../providers/usuario/usuario';
+
+import {SaveDataProvider, Usuario} from '../../providers/save-data/save-data';
 
 @Component({
   selector: 'page-registro',
@@ -10,13 +10,12 @@ import {UsuarioProvider, Usuario} from '../../providers/usuario/usuario';
 })
 export class RegistroPage {
 
-  usuario:Usuario;
+  user:Usuario;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public service: UsuarioProvider,
-    public toastCtrl: ToastController
+    public service2:SaveDataProvider,
    ) {
-    this.usuario=new Usuario();
+    this.user=new Usuario();
   }
 
   ionViewDidLoad() {
@@ -24,24 +23,12 @@ export class RegistroPage {
   }
 
   goToSecondPage(){
-    
-    this.service.insert(this.usuario).subscribe(res=>{
-      if(res.success){
-        this.showToast("Usuario registrado")
-        this.navCtrl.push(AddMascotaPage);
-      } else{
-        this.showToast("Hubo un error al insertar el usuario");
-      }
-    });
+    this.service2.usuario=this.user;
+    this.navCtrl.push(AddMascotaPage);
   }
 
-  showToast(msg:string){
-    let toast=this.toastCtrl.create({
-      message: msg,
-      duration: 3000,
-      position: "top",
-    });
-    toast.present();
-  }
+  
+
+    
 
 }
