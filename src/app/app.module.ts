@@ -18,6 +18,8 @@ import {ForumPage } from '../pages/forum/forum';
 import {AddMascotaPage} from '../pages/add-mascota/add-mascota';
 import {AddVacunaPage} from '../pages/add-vacuna/add-vacuna';
 import {AddVetPage} from '../pages/add-vet/add-vet';
+import {NewMascotaPage} from '../pages/new-mascota/new-mascota';
+import {ConfigureUserPage} from '../pages/configure-user/configure-user';
 
 import {PerrosDataProvider} from '../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
@@ -27,9 +29,9 @@ import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
 import {VetDaoProvider} from '../providers/vets-data/vet-dao';
 import {DatabaseConnectionProvider} from '../providers/database-connection/database-connection';
 import {NgCalendarModule} from 'ionic2-calendar';
-
 import { SaveDataProvider } from '../providers/save-data/save-data';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
+import { NewpetServiceProvider } from '../providers/newpet-service/newpet-service';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     AddMascotaPage,
     AddVacunaPage,
     AddVetPage,
-    
+    NewMascotaPage,
+    ConfigureUserPage,
   ],
   imports: [
     NgCalendarModule,
@@ -71,6 +74,8 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     AddMascotaPage,
     AddVacunaPage,
     AddVetPage,
+    NewMascotaPage,
+    ConfigureUserPage,
   ],
   providers: [
     StatusBar,
@@ -86,6 +91,7 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
    
     SaveDataProvider,
     LoginServiceProvider,
+    NewpetServiceProvider,
   ]
 })
 export class AppModule {}

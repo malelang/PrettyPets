@@ -1,0 +1,28 @@
+page-configure-user {
+    .config-bg{
+        background-image: url('http://cdn.droidviews.com/wp-content/uploads/2016/10/google-pixel-xl-new_droidviews.png');
+        background-repeat : no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .config-form{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .config-main{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .config-title{
+        font-family: pacifico;
+        color: #182496;
+        font-size: 2em;
+        text-align: center;
+    }
+}

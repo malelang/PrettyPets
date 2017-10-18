@@ -18,8 +18,8 @@ export class LoginServiceProvider {
 
 
 
-loguser(username:String,password:String):Observable<{SimpleResponse}>{
-  const body={username: username, password: password};
+loguser(nomusuario:string,contrasena:string):Observable<SimpleResponse>{
+  const body={username: nomusuario, password: contrasena};
   return this.http.post<SimpleResponse>(this.url+"/login",body).catch((err)=>{
     return Observable.throw(err);
   });

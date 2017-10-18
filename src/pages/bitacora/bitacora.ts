@@ -39,6 +39,7 @@ export class BitacoraPage {
 
   goToAdd(){
     this.navCtrl.push(AddVacunaPage);
+
   }
 
   addEvent(){

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {LoginPage} from '../login/login';
+import {NewMascotaPage} from '../new-mascota/new-mascota';
+import {ConfigureUserPage} from '../configure-user/configure-user';
 import {Mascota,Usuario, SaveDataProvider} from '../../providers/save-data/save-data';
 import {LoginServiceProvider} from '../../providers/login-service/login-service';
-
+import {NewpetServiceProvider} from '../../providers/newpet-service/newpet-service';
 
 
 @Component({
@@ -19,7 +21,9 @@ export class PerfilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public storage: Storage,
   public service:SaveDataProvider,
-  public service2: LoginServiceProvider) {
+  public service2: LoginServiceProvider,
+  public service3: NewpetServiceProvider,
+  public toastCtrl: ToastController) {
     this.user=new Usuario();
   }
 
@@ -49,6 +53,7 @@ export class PerfilPage {
     //this.data=this.service.usuario.mascotas;
     this.service2.getuser(this.service2.usuario.username).subscribe(res=> 
       {this.user=res;
+        this.service2.usuario=this.user;
         this.storage.set("id",this.user._id)
         this.loadPets();
         if(refresher!=null)
@@ -61,13 +66,21 @@ export class PerfilPage {
   }
 
   goToNewPet(){
-    
+    this.navCtrl.push(NewMascotaPage);
   }
 
   goToSettings(){
-
+    this.navCtrl.push(ConfigureUserPage);
   }
   
+  showToast(msg:string){
+    let toast=this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position:"top",
+    });
+    toast.present();
+  }
 
   
 }

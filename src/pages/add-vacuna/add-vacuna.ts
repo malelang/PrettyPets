@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Vacuna} from '../../providers/vacunas-data/vacuna';
 import {Parasito} from '../../providers/vacunas-data/parasito';
+import {BitacoraPage} from '../bitacora/bitacora';
 
 @Component({
   selector: 'page-add-vacuna',

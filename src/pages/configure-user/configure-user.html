@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar color="secondary" hide-tabs>
+      <ion-title>Actualizar información</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding class="config-bg">
+    
+      <div class="config-main">
+        <div class="config-form">
+          <form #form1="ngForm">
+          <ion-row>
+            <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+              <ion-item color="glass">
+                <ion-label color="light" floating>Dirección</ion-label>
+                <ion-input name="direccion" type="text" [(ngModel)]="newdireccion" required></ion-input>
+              </ion-item>
+            <button col-4 offset-7 ion-button color="secondary" block (click)="updateDireccion()" [disabled]="!form1.valid">Actualizar</button>
+          </ion-col>
+          </ion-row>
+        </form>
+        <br>
+        
+        <form #form2="ngForm">
+          <ion-row>
+            <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+              <ion-item color="glass">
+                <ion-label color="light" floating>Numero de contacto</ion-label>
+                <ion-input name="contacto" type="text" [(ngModel)]="newcontacto" required></ion-input>
+              </ion-item>
+              <button col-4 offset-7 ion-button color="secondary" block (click)="updateContacto()" [disabled]="!form2.valid">Actualizar</button>
+            </ion-col>
+          </ion-row>
+        </form>
+        <br>
+
+        
+          <ion-row>
+            <ion-label col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 color="light">Edad</ion-label>
+          </ion-row>
+          <form #formedad="ngForm">
+          <ion-row>
+            <ion-list>
+              <ion-item col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 color="light" text="Pulse aqui">
+                <ion-label>Escoja su edad</ion-label>
+                <ion-select [(ngModel)]="newedad" okText="Listo" cancelText="Cancelar" name="edad" required>
+                  <ion-option value=18>18</ion-option>
+                  <ion-option value=19>19</ion-option>
+                  <ion-option value=20>20</ion-option>
+                  <ion-option value=21>21</ion-option>
+                  <ion-option value=22>22</ion-option>
+                  <ion-option value=23>23</ion-option>
+                  <ion-option value=24>24</ion-option>
+                  <ion-option value=25>25</ion-option>
+                  <ion-option value=26>26</ion-option>
+                  <ion-option value=27>27</ion-option>
+                  <ion-option value=28>28</ion-option>
+                  <ion-option value=29>29</ion-option>
+                  <ion-option value=30>30</ion-option>
+                  <ion-option value=31>31</ion-option>
+                  <ion-option value=32>32</ion-option>
+                  <ion-option value=33>33</ion-option>
+                  <ion-option value=34>34</ion-option>
+                  <ion-option value=35>35</ion-option>
+                  <ion-option value=36>36</ion-option>
+                  <ion-option value=37>37</ion-option>
+                  <ion-option value=38>38</ion-option>
+                  <ion-option value=39>39</ion-option>
+                  <ion-option value=40>40</ion-option>
+                  <ion-option value=41>41</ion-option>
+                  <ion-option value=42>42</ion-option>
+                  <ion-option value=43>43</ion-option>
+                  <ion-option value=44>44</ion-option>
+                  <ion-option value=45>45</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+            <button col-4 offset-7 ion-button color="secondary" block (click)="updateEdad()" [disabled]="!formedad.valid">Actualizar</button>
+          </ion-row>
+        </form>
+
+        <form #formimg="ngForm">
+          <ion-row>
+            <ion-col col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4>
+              <ion-item color="glass">
+                <ion-label color="light" floating>Imagen(URL)</ion-label>
+                <ion-input name="imagen" type="text" [(ngModel)]="newimagen"></ion-input>
+              </ion-item>
+            <button col-4 offset-7 ion-button color="secondary" block (click)="updateImage()" [disabled]="!formimg.valid" required>Actualizar</button>
+          </ion-col>
+          </ion-row>
+        </form>
+        </div>
+      </div>
+    
+  </ion-content>

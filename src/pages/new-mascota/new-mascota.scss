@@ -1,0 +1,28 @@
+page-new-mascota {
+    .new-mascota-bg{
+        background-image: url("../../assets/img/perfil_bg.jpg");
+        background-repeat : no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .new-mascota-form{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .new-mascota-main{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .new-mascota-title{
+        font-family: pacifico;
+        color: #182496;
+        font-size: 2em;
+        text-align: center;
+    }
+}

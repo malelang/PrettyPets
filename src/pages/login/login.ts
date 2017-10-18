@@ -31,7 +31,7 @@ export class LoginPage {
         loading.present();
         this.service.loguser(this.usuario.username, this.usuario.password).subscribe(res => {
           loading.dismiss();       
-          if (res) {
+          if (res.success) {
             this.service.usuario=this.usuario;
             this.navCtrl.push(TabsPage);
             this.storage.set("logged", true);
