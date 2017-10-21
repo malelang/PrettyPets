@@ -56,9 +56,27 @@ export class Usuario{
   edad: number;
   imagen:string;
   mascotas: Mascota[]=[];
+  vacunas: Vacuna[]=[];
+  parasitos: Parasito[]=[];
+}
+
+export class Vacuna{
+  public fecha:Date;
+  public enfermedad: string;
+  public veterinario:string;   
+  public receptor: string;   
+}
+
+export class Parasito{
+  public fecha:Date;
+  public peso: number;
+  public producto:string;
+  public proxima:Date;   
+  public receptor: string; 
 }
 
 export class SimpleResponse{
   success:boolean;
   err: string;
 }
+

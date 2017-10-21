@@ -5,6 +5,14 @@ page-bitacora {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            p{
+                font-size:1em;
+                text-align:center;
+            }
+
+            ion-card{
+                color: #1fa8a1;
+            }
         }
 
         .bitacora-title{
@@ -18,6 +26,13 @@ page-bitacora {
             background: white;
             border:  solid black;
             }
+        
+        .marco{
+            background: white;
+            border: solid #1fa8a1;
+        }
+
+        
 
         
     

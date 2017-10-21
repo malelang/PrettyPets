@@ -1,76 +1,102 @@
 <ion-header>
-  <ion-navbar hide-tabs color="secondary">
-  
+  <ion-navbar color="secondary">
+    <!-- <ion-buttons left>
+      <button ion-button icon-only (click)="takeMeBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons> -->
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="add-vacuna-bg" >
+<ion-content padding class="add-vacuna-bg">
 
-<ion-scroll scrollY="true" style="width: 100%; height: 100%;">
-  <div class="add-vacuna-main">
-    <div class="add-vacuna-form">
-      <form #formvac="ngForm">
-        <h1 class="add-vacuna-subtitle-bis">Agregar vacuna</h1>
-        <ion-row>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
-            <ion-item color="dglass">
-              <ion-label color="dark">Fecha</ion-label>
-              <ion-datetime name="fecha" displayFormat="DD/MM/YYYY" min="2016" placeholder="Inserte fecha" [(ngModel)]="vacuna.fecha" required></ion-datetime>
-            </ion-item>
-          </ion-col>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
-            <ion-item color="dglass">
-              <ion-label fixed color="dark">Vacuna</ion-label>
-              <ion-input name="enfermedad" type="text" [(ngModel)]="vacuna.enfermedad" required></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
-            <ion-item color="dglass">
-              <ion-label fixed color="dark">Veterinario</ion-label>
-              <ion-input name="veterinario" type="text" [(ngModel)]="vacuna.veterinario" required></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <button ion-col col-5 offset-6 ion-button color="dark" round (click)="addv()" [disabled]="!formvac.valid">Agregar</button>
-        </ion-row>
-      </form>
-      <br>
-      <br>
-      <form #form="ngForm">
-        <h2 class="add-vacuna-subtitle">Agregar desparasitación</h2>
-        <ion-row>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
-            <ion-item color="dglass">
-              <ion-label color="primary">Fecha</ion-label>
-              <ion-datetime name="fecha" displayFormat="DD/MM/YYYY" min="2016" placeholder="Inserte fecha" [(ngModel)]="parasito.fecha" required></ion-datetime>
-            </ion-item>
-          </ion-col>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
-            <ion-item color="dglass">
-              <ion-label fixed color="primary">Peso</ion-label>
-              <ion-input name="peso" type="text" [(ngModel)]="parasito.peso" required></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
-            <ion-item color="dglass">
-              <ion-label fixed color="primary">Producto</ion-label>
-              <ion-input name="producto" type="text" [(ngModel)]="parasito.producto" required></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
-            <ion-item color="dglass">
-              <ion-label color="primary">Próxima desparasitación</ion-label>
-              <ion-datetime name="proxima" displayFormat="DD/MM/YYYY" min="2016" placeholder="Inserte fecha" [(ngModel)]="parasito.proxima" required></ion-datetime>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <button ion-col col-5 offset-6 ion-button color="primary" round (click)="addp()" [disabled]="!form.valid">Agregar</button>
-        </ion-row>
-      </form>
+  <ion-scroll scrollY="true" style="width: 100%; height: 100%;">
+    <div class="add-vacuna-main">
+      <div class="add-vacuna-form">
+
+        <form #formvac="ngForm">
+          <h1 class="add-vacuna-subtitle-bis">Agregar vacuna</h1>
+          <ion-row>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
+              <ion-item color="dglass">
+                <ion-label color="dark">Fecha</ion-label>
+                <ion-datetime name="fecha" displayFormat="DD/MM/YYYY" min="2017" placeholder="Inserte fecha" [(ngModel)]="vacuna.fecha" required></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-item color="dglass">
+                <ion-label fixed color="dark">Vacuna</ion-label>
+                <ion-input name="enfermedad" type="text" [(ngModel)]="vacuna.enfermedad" required></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-item color="dglass">
+                <ion-label fixed color="dark">Veterinario</ion-label>
+                <ion-input name="veterinario" type="text" [(ngModel)]="vacuna.veterinario" required></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-label col-3 color="dark"> ¿Qué mascota recibió la vacuna? </ion-label>
+              <ion-item col-8 offset-4 color="dglass" margin-top>
+                <ion-label color="dark">Escoja su mascota</ion-label>
+                <ion-select [(ngModel)]="vacuna.receptor" okText="Listo" cancelText="Cancelar" name="raza" required>
+                  <ion-option *ngFor="let m of stringmas" [value]="m">{{m}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <button ion-col col-5 offset-6 ion-button color="dark" round (click)="addv()" [disabled]="!formvac.valid">Agregar</button>
+          </ion-row>
+        </form>
+        <br>
+        <br>
+        <form #form="ngForm">
+          <h2 class="add-vacuna-subtitle">Agregar desparasitación</h2>
+          <ion-row>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4>
+              <ion-item color="dglass">
+                <ion-label color="primary">Fecha</ion-label>
+                <ion-datetime name="fecha" displayFormat="DD/MM/YYYY" min="2017" placeholder="Inserte fecha" [(ngModel)]="parasito.fecha"
+                  required></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-item color="dglass">
+                <ion-label fixed color="primary">Peso</ion-label>
+                <ion-input name="peso" type="text" [(ngModel)]="parasito.peso" required></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-item color="dglass">
+                <ion-label fixed color="primary">Producto</ion-label>
+                <ion-input name="producto" type="text" [(ngModel)]="parasito.producto" required></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-item color="dglass">
+                <ion-label color="primary">Próxima desparasitación</ion-label>
+                <ion-datetime name="proxima" displayFormat="DD/MM/YYYY" min="2016" placeholder="Inserte fecha" [(ngModel)]="parasito.proxima"
+                  required></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12 col-md-6 offset-md-2 col-lg-4 offset-lg-4 margin-top>
+              <ion-label col-3 color="primary"> ¿Qué mascota recibió la vacuna? </ion-label>
+              <ion-item col-8 offset-4 color="dglass" margin-top>
+                <ion-label color="primary">Escoja su mascota</ion-label>
+                <ion-select [(ngModel)]="parasito.receptor" okText="Listo" cancelText="Cancelar" name="raza" required>
+                  <ion-option *ngFor="let m of stringmas" [value]="m">{{m}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <button ion-col col-5 offset-6 ion-button color="primary" round (click)="addp()" [disabled]="!form.valid">Agregar</button>
+          </ion-row>
+        </form>
+      </div>
     </div>
-  </div>
   </ion-scroll>
 
 </ion-content>

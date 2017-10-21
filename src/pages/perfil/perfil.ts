@@ -30,9 +30,7 @@ export class PerfilPage {
   
 
   ionViewDidLoad() {
-    
     this.loadUsers();
-    this.loadPets();
   }
 
   logout(){
@@ -49,8 +47,6 @@ export class PerfilPage {
   }
 
   loadUsers(refresher=null){
-    //this.user=this.service2.usuario;
-    //this.data=this.service.usuario.mascotas;
     this.service2.getuser(this.service2.usuario.username).subscribe(res=> 
       {this.user=res;
         this.service2.usuario=this.user;

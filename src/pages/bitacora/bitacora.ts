@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
-import {VacunaDataProvider} from '../../providers/vacunas-data/vacunas-data';
-import {Vacuna} from '../../providers/vacunas-data/vacuna';
-import {ParasitoDataProvider} from '../../providers/vacunas-data/parasito-data';
-import {Parasito} from '../../providers/vacunas-data/parasito';
+import {Vacuna, Parasito, Usuario} from '../../providers/save-data/save-data'
 import {AddVacunaPage} from '../add-vacuna/add-vacuna';
-
+import {LoginServiceProvider} from '../../providers/login-service/login-service';
+import {Storage} from '@ionic/storage';
 import * as moment from 'moment';
 
 @Component({
@@ -16,7 +14,7 @@ export class BitacoraPage {
 
   vacunas:Vacuna[];
   parasitos:Parasito[];
-  
+  user: Usuario;
   eventSource=[];
   viewTitle:string;
   selectedDay=new Date();
@@ -27,14 +25,40 @@ export class BitacoraPage {
   
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public service: VacunaDataProvider, public service2: ParasitoDataProvider,
-    private modalCtrl:ModalController, private alertCtrl:AlertController) {
-      this.vacunas=service.data;
-      this.parasitos=service2.data;
+    public service:LoginServiceProvider, public storage:Storage,
+    private modalCtrl:ModalController, private alertCtrl:AlertController,
+    ) {
+      this.user=new Usuario();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BitacoraPage');
+    this.loadUsers();
+  }
+
+  doRefresh(refresher){
+    this.loadUsers(refresher);
+    this.loadVacunas();
+    this.loadDesp();
+  }
+
+  loadUsers(refresher=null){
+    this.service.getuser(this.service.usuario.username).subscribe(res=> 
+      {this.user=res;
+        this.service.usuario=this.user;
+        this.loadVacunas();
+        this.loadDesp();
+        if(refresher!=null)
+          {refresher.complete();}
+      });
+      
+  }
+
+  loadVacunas(){
+    this.vacunas=this.user.vacunas;
+  }
+
+  loadDesp(){
+    this.parasitos=this.user.parasitos;
   }
 
   goToAdd(){

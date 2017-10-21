@@ -24,8 +24,6 @@ import {ConfigureUserPage} from '../pages/configure-user/configure-user';
 import {PerrosDataProvider} from '../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
 import {VeterinarioDataProvider} from '../providers/vets-data/vets-data';
-import {VacunaDataProvider} from '../providers/vacunas-data/vacunas-data';
-import {ParasitoDataProvider} from '../providers/vacunas-data/parasito-data';
 import {VetDaoProvider} from '../providers/vets-data/vet-dao';
 import {DatabaseConnectionProvider} from '../providers/database-connection/database-connection';
 import {NgCalendarModule} from 'ionic2-calendar';
@@ -84,8 +82,6 @@ import { NewpetServiceProvider } from '../providers/newpet-service/newpet-servic
     PerrosDataProvider,
     GatosDataProvider,
     VeterinarioDataProvider,
-    VacunaDataProvider,
-    ParasitoDataProvider,
     DatabaseConnectionProvider,
     VetDaoProvider,
    
