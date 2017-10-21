@@ -5,14 +5,14 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
+import {IonicStorageModule} from '@ionic/storage';
 
-//PAGES AND PROVIDERS
+//PAGES
 import { TabsPage } from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
 import { RegistroPage} from '../pages/registro/registro';
 import {PerfilPage} from '../pages/perfil/perfil';
 import {VetsPage} from '../pages/vets/vets';
-import {IonicStorageModule} from '@ionic/storage';
 import {BitacoraPage} from '../pages/bitacora/bitacora';
 import {ForumPage } from '../pages/forum/forum';
 import {AddMascotaPage} from '../pages/add-mascota/add-mascota';
@@ -21,6 +21,7 @@ import {AddVetPage} from '../pages/add-vet/add-vet';
 import {NewMascotaPage} from '../pages/new-mascota/new-mascota';
 import {ConfigureUserPage} from '../pages/configure-user/configure-user';
 
+//PROVIDERS
 import {PerrosDataProvider} from '../providers/mascota-data/perros-data';
 import {GatosDataProvider} from '../providers/mascota-data/gatos-data';
 import {VeterinarioDataProvider} from '../providers/vets-data/vets-data';
@@ -35,7 +36,6 @@ import { NewpetServiceProvider } from '../providers/newpet-service/newpet-servic
 @NgModule({
   declarations: [
     MyApp,
-    
     TabsPage,
     LoginPage,
     RegistroPage,
@@ -59,9 +59,6 @@ import { NewpetServiceProvider } from '../providers/newpet-service/newpet-servic
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-//    AboutPage,
-//    ContactPage,
-   
     TabsPage,
     LoginPage,
     RegistroPage,

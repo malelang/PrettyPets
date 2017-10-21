@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="primary" hideBackButton>
 
@@ -36,57 +35,57 @@
 
         <ion-row>
           <ion-label col-3 offset-1 margin-bottom color="dark">Edad</ion-label>
-          
-            <ion-item col-8 offset-4 color="dglass" margin-top>
-              <ion-label color="dark">Escoja la edad de su mascota</ion-label>
-              <ion-select [(ngModel)]="mascota.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
-                <ion-option value=0>menor que 1 año</ion-option>
-                <ion-option value=1>1 año </ion-option>
-                <ion-option value=2>2 años</ion-option>
-                <ion-option value=3>3 años</ion-option>
-                <ion-option value=4>4 años</ion-option>
-                <ion-option value=5>5 años</ion-option>
-                <ion-option value=6>6 años</ion-option>
-                <ion-option value=7>7 años</ion-option>
-                <ion-option value=8>8 años</ion-option>
-                <ion-option value=9>9 años</ion-option>
-                <ion-option value=10>10 años</ion-option>
-                <ion-option value=11>11 años</ion-option>
-                <ion-option value=12>12 años</ion-option>
-              </ion-select>
-            </ion-item>
-          
+
+          <ion-item col-8 offset-4 color="dglass" margin-top>
+            <ion-label color="dark">Escoja la edad de su mascota</ion-label>
+            <ion-select [(ngModel)]="mascota.edad" okText="Listo" cancelText="Cancelar" name="edad" required>
+              <ion-option value=0>menor que 1 año</ion-option>
+              <ion-option value=1>1 año </ion-option>
+              <ion-option value=2>2 años</ion-option>
+              <ion-option value=3>3 años</ion-option>
+              <ion-option value=4>4 años</ion-option>
+              <ion-option value=5>5 años</ion-option>
+              <ion-option value=6>6 años</ion-option>
+              <ion-option value=7>7 años</ion-option>
+              <ion-option value=8>8 años</ion-option>
+              <ion-option value=9>9 años</ion-option>
+              <ion-option value=10>10 años</ion-option>
+              <ion-option value=11>11 años</ion-option>
+              <ion-option value=12>12 años</ion-option>
+            </ion-select>
+          </ion-item>
+
         </ion-row>
         <ion-row>
           <ion-label col-6 color="dark">Animal</ion-label>
           <ion-list col-5 offset-6 radio-group no-lines [(ngModel)]="mascota.tipo" name="tipo" required>
-              <ion-item color="dglass" margin-top>
-                <ion-label color="dark">Gato</ion-label>
-                <ion-radio value="g" checked></ion-radio>
-              </ion-item>
-              <ion-item color="dglass">
-                <ion-label color="dark">Perro</ion-label>
-                <ion-radio value="p"></ion-radio>
-              </ion-item>
-            </ion-list>
+            <ion-item color="dglass" margin-top>
+              <ion-label color="dark">Gato</ion-label>
+              <ion-radio value="g" checked></ion-radio>
+            </ion-item>
+            <ion-item color="dglass">
+              <ion-label color="dark">Perro</ion-label>
+              <ion-radio value="p"></ion-radio>
+            </ion-item>
+          </ion-list>
         </ion-row>
 
         <ion-row>
 
           <ion-label col-3 color="dark"> Raza </ion-label>
-            <ion-item *ngIf="mascota.tipo == 'g'" col-8 offset-4 color="dglass" margin-top>
-              <ion-label color="dark">Escoja la raza de su gato</ion-label>
-              <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
-                <ion-option *ngFor="let g of razagatos" [value]="g">{{g}}</ion-option>
-              </ion-select>
-            </ion-item>
-        
-            <ion-item *ngIf="mascota.tipo == 'p'" col-8 offset-4 color="dglass" margin-top>
-              <ion-label color="dark">Escoja la raza de su perro</ion-label>
-              <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
-                <ion-option *ngFor="let p of razaperros" [value]="p">{{p}}</ion-option>
-              </ion-select>
-            </ion-item>
+          <ion-item *ngIf="mascota.tipo == 'g'" col-8 offset-4 color="dglass" margin-top>
+            <ion-label color="dark">Escoja la raza de su gato</ion-label>
+            <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
+              <ion-option *ngFor="let g of razagatos" [value]="g">{{g}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="mascota.tipo == 'p'" col-8 offset-4 color="dglass" margin-top>
+            <ion-label color="dark">Escoja la raza de su perro</ion-label>
+            <ion-select [(ngModel)]="mascota.raza" okText="Listo" cancelText="Cancelar" name="raza" required>
+              <ion-option *ngFor="let p of razaperros" [value]="p">{{p}}</ion-option>
+            </ion-select>
+          </ion-item>
         </ion-row>
 
         <ion-row>

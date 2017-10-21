@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PerrosDataProvider {
 
-  data:String[]= [
+  data: String[] = [
     "Ninguna en específico",
     "Alano",
     "Alaskan Malamute ",
@@ -96,6 +96,6 @@ export class PerrosDataProvider {
   ];
 
   constructor() {
-    
+
   }
 }

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-
 import {PerfilPage} from '../perfil/perfil';
-//import {Storage} from '@ionic/storage';
 import {VetsPage} from '../vets/vets';
 import {BitacoraPage} from '../bitacora/bitacora';
 import {ForumPage} from '../forum/forum';
@@ -18,7 +15,5 @@ export class TabsPage {
   tab4Root = ForumPage;
   
 
-  constructor() {
-
-  }
+  constructor() {}
 }

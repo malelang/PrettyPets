@@ -4,6 +4,10 @@ page-vets {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        p{
+            font-size:1em;
+            text-align:center;
+        }
     }
 
     .vet-title{
@@ -16,6 +20,32 @@ page-vets {
     .col-vet{
         background: #6BC9CC;
         border:  solid black;
+        }
+    
+    .card-background-page {
+            
+        ion-card {
+            position: relative;
+            text-align: center;
+            }
+            
+        .card-title {
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #000;
+            }
+            
+        .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #000;
+            }
+            
         }
 
         #floating-panel {

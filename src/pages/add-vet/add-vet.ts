@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {VetDaoProvider} from '../../providers/vets-data/vet-dao';
-import {Vet} from '../../providers/vets-data/vet';
+import { VetDaoProvider } from '../../providers/vets-data/vet-dao';
+import { Vet } from '../../providers/vets-data/vet';
 
 @Component({
   selector: 'page-add-vet',

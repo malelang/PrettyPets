@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
-import {Storage} from '@ionic/storage';
-import {LoginPage} from '../login/login';
-import {NewMascotaPage} from '../new-mascota/new-mascota';
-import {ConfigureUserPage} from '../configure-user/configure-user';
-import {Mascota,Usuario, SaveDataProvider} from '../../providers/save-data/save-data';
-import {LoginServiceProvider} from '../../providers/login-service/login-service';
-import {NewpetServiceProvider} from '../../providers/newpet-service/newpet-service';
+import { Storage } from '@ionic/storage';
+import { LoginPage } from '../login/login';
+import { NewMascotaPage } from '../new-mascota/new-mascota';
+import { ConfigureUserPage } from '../configure-user/configure-user';
+import { Mascota, Usuario, SaveDataProvider } from '../../providers/save-data/save-data';
+import { LoginServiceProvider } from '../../providers/login-service/login-service';
+import { NewpetServiceProvider } from '../../providers/newpet-service/newpet-service';
 
 
 @Component({
@@ -16,67 +16,66 @@ import {NewpetServiceProvider} from '../../providers/newpet-service/newpet-servi
 export class PerfilPage {
 
   user: Usuario;
-  data: Mascota[]=[]
+  data: Mascota[] = []
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public storage: Storage,
-  public service:SaveDataProvider,
-  public service2: LoginServiceProvider,
-  public service3: NewpetServiceProvider,
-  public toastCtrl: ToastController) {
-    this.user=new Usuario();
+    public storage: Storage,
+    public service: SaveDataProvider,
+    public service2: LoginServiceProvider,
+    public service3: NewpetServiceProvider,
+    public toastCtrl: ToastController) {
+    this.user = new Usuario();
   }
 
-  
+
 
   ionViewDidLoad() {
     this.loadUsers();
   }
 
-  logout(){
-    this.storage.set("id",null);
-    this.storage.set("logged",false);
+  logout() {
+    this.storage.set("id", null);
+    this.storage.set("logged", false);
     this.navCtrl.parent.parent.setRoot(LoginPage);
-    
+
   }
 
-  
 
-  loadPets(refresher=null){
-    this.data=this.user.mascotas;
+
+  loadPets(refresher = null) {
+    this.data = this.user.mascotas;
   }
 
-  loadUsers(refresher=null){
-    this.service2.getuser(this.service2.usuario.username).subscribe(res=> 
-      {this.user=res;
-        this.service2.usuario=this.user;
-        this.storage.set("id",this.user._id)
-        this.loadPets();
-        if(refresher!=null)
-          {refresher.complete();}
-      });
+  loadUsers(refresher = null) {
+    this.service2.getuser(this.service2.usuario.username).subscribe(res => {
+    this.user = res;
+      this.service2.usuario = this.user;
+      this.storage.set("id", this.user._id)
+      this.loadPets();
+      if (refresher != null) { refresher.complete(); }
+    });
   }
 
-  doRefresh(refresher){
+  doRefresh(refresher) {
     this.loadUsers(refresher);
   }
 
-  goToNewPet(){
+  goToNewPet() {
     this.navCtrl.push(NewMascotaPage);
   }
 
-  goToSettings(){
+  goToSettings() {
     this.navCtrl.push(ConfigureUserPage);
   }
-  
-  showToast(msg:string){
-    let toast=this.toastCtrl.create({
+
+  showToast(msg: string) {
+    let toast = this.toastCtrl.create({
       message: msg,
       duration: 3000,
-      position:"top",
+      position: "top",
     });
     toast.present();
   }
 
-  
+
 }

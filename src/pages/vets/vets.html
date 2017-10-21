@@ -1,31 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title color="primary">Veterinarios</ion-title>
+  <ion-navbar color="primary">
+    <ion-title >Veterinarios</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding class="vet-bg">
+<ion-content padding class="vet-bg" class="card-background-page">
   <h1 class="vet-title" margin-top>¿Buscas un veterinario?</h1>
   <ion-label>Tenemos algunos recomendados para ti</ion-label>
-  <div>
+  
     <ion-row>
-      <ion-col col12 col-md-4 col-lg-2 *ngFor="let v of veterinarios">
-        <ion-card color="secondary" margin-right margin-left margin-top>
-          <ion-card-header>{{v.nombre}}</ion-card-header>
-          <img src="{{v.imagen}}" alt="">
-          <ion-card-content>
-            <div>
-              <ion-icon name="home">{{v.direccion}}</ion-icon>
-            </div>
-            <div>
-              <ion-icon name="call">{{v.contacto}}</ion-icon>
-            </div>
-          </ion-card-content>
-        </ion-card>
+      <ion-col col-12 col-md-6 offset-md-5 col-lg-5 offset-lg-3>
+          <ion-card *ngFor="let v of veterinarios">
+              <img src="{{v.imagen}}"/>
+              <div class="card-title">{{v.nombre}}</div>
+              <div class="card-subtitle">{{v.contacto}}</div>
+            </ion-card>
       </ion-col>
     </ion-row>
-  </div>
+  
   <br>
 
 
@@ -43,6 +36,11 @@
       <ion-col col-4>Numero de contacto</ion-col>
 
     </ion-row>
+    <ion-row *ngFor="let v of veterinarios">
+        <ion-col col-4>{{v.nombre}}</ion-col>
+        <ion-col col-4>{{v.direccion}}</ion-col>
+        <ion-col col-4>{{v.contacto}}</ion-col>
+    </ion-row>
     <ion-row *ngFor="let u of vets">
       <ion-col col-4>{{u.nombre}}</ion-col>
       <ion-col col-4>{{u.direccion}}</ion-col>
@@ -50,9 +48,11 @@
 
     </ion-row>
   </div>
-  <label>Ingresa tus veterinarios</label>
+  <p>Ingresa tus veterinarios</p>
   <ion-fab right bottom>
-    <button ion-fab color="danger" (click)="goToAddVet()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="danger" (click)="goToAddVet()">
+      <ion-icon name="add"></ion-icon>
+    </button>
   </ion-fab>
 
 </ion-content>
