@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { LoginServiceProvider } from '../../providers/login-service/login-service';
 import { NewpetServiceProvider } from '../../providers/newpet-service/newpet-service';
-import { Usuario, Mascota, Vacuna, Parasito } from '../../providers/save-data/save-data';
+import { Usuario, Vacuna, Parasito } from '../../providers/save-data/save-data';
 import { Storage } from '@ionic/storage';
 
 @Component({

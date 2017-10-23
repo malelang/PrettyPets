@@ -23,10 +23,10 @@
       <ion-col col-3 col-md-3 col-lg-2>Mascota</ion-col>
     </ion-row>
     <ion-row *ngFor="let v of vacunas">
-      <ion-col>{{v.fecha}}</ion-col>
-      <ion-col>{{v.enfermedad}}</ion-col>
-      <ion-col>{{v.veterinario}}</ion-col>
-      <ion-col>{{v.receptor}}</ion-col>
+      <ion-col col-3 col-md-3 offset-md-1 col-lg-2 offset-lg-2>{{v.fecha}}</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{v.enfermedad}}</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{v.veterinario}}</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{v.receptor}}</ion-col>
     </ion-row>
   </div>
   <br>
@@ -42,10 +42,10 @@
 
     </ion-row>
     <ion-row *ngFor="let p of parasitos">
-      <ion-col>{{p.fecha}}</ion-col>
-      <ion-col>{{p.peso}} kg</ion-col>
-      <ion-col>{{p.producto}}</ion-col>
-      <ion-col>{{p.receptor}}</ion-col>
+      <ion-col col-3 col-md-3 offset-md-1 col-lg-2 offset-lg-2>{{p.fecha}}</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{p.peso}} kg</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{p.producto}}</ion-col>
+      <ion-col col-3 col-md-3 col-lg-2>{{p.receptor}}</ion-col>
     </ion-row>
   </div>
   <br>
@@ -53,24 +53,26 @@
   <h3 offset-1 offset-md-1 offset-lg-1 class="bitacora-title">Recuerda que...</h3>
   <br>
   <div class="marco">
-    <p col-7 offset-3 col-md-4 offset-md-5 col-lg-3 offset-lg-1>Tus mascotas deben estar debidamente vacunadas y desparasitadas, para esto, te recordamos las siguientes fechas, para
+    
+    <p col-7 offset-3 col-md-4 offset-md-5 col-lg-6 offset-lg-3>Tus mascotas deben estar debidamente vacunadas y desparasitadas, para esto, te recordamos las siguientes fechas, para
       que tengas en cuenta a tu peludito en sus cuidados. ¡Una mascota sana es una mascota feliz!
     </p>
+  
   </div>
   <br>
   <div class="col">
     <ion-row>
-      <ion-col col-6 col-md-4 offset-md-1 col-lg-3 offset-lg-2>Mascota</ion-col>
+      <ion-col col-6 col-md-4 offset-md-1 col-lg-3 offset-lg-3>Mascota</ion-col>
       <ion-col col-6 col-md-4 col-lg-3>Próxima desparasitación</ion-col>
     </ion-row>
     <ion-row *ngFor="let p of parasitos">
-      <ion-col>{{p.receptor}}</ion-col>
-      <ion-col>{{p.proxima}}</ion-col>
+      <ion-col col-6 col-md-4 offset-md-1 col-lg-3 offset-lg-3>{{p.receptor}}</ion-col>
+      <ion-col col-6 col-md-4 col-lg-3>{{p.proxima}}</ion-col>
     </ion-row>
   </div>
   <br>
   <div class="marco">
-    <p col-7 offset-3 col-md-1 offset-md-5 col-lg-3 offset-lg-1>Más información acerca de las vacunas al final de esta página!</p>
+    <p col-7 offset-3 col-md-4 offset-md-5 col-lg-6 offset-lg-3>Más información acerca de las vacunas al final de esta página!</p>
   </div>
   <br>
   <calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate" (onEventSelected)="onEventSelected($event)"
@@ -79,14 +81,14 @@
   <br>
   <div>
     <h3 class="bitacora-title">Vacunas para los perros</h3>
-    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-4>
+    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-3>
       <ion-card-header color="primary">Vacuna séxtuple u óctuple</ion-card-header>
       <ion-card-content>La vacuna séxtuple u óctuple, es fundamental durante los primeros meses de vida del cachorro. La séxtuple, previene
         las siguientes enfermedades: Moquillo, Hepatitis, Adenovirosis, Parainfluenza, Parvovirosis y Leptospirosis; la óctuple
         previene las mismas más el Cornovirus y la llamada "tos de las perreras". Se puede poner cualquiera de las dos, según
         indique el veterinario.</ion-card-content>
     </ion-card>
-    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-4>
+    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-3>
       <ion-card-header color="primary">Vacuna antirrábica</ion-card-header>
       <ion-card-content>Es una vacuna que es común para ambas especies.Es obligatoria por ley desde los dos meses y cada un año. La rabia es
         una enfermedad mortal, que ataca a animales y humanos, siendo fundamental la vacunación para prevenirla.</ion-card-content>
@@ -95,7 +97,7 @@
   <br>
   <div>
     <h3 class="bitacora-title">Vacunas para los gatos</h3>
-    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-4>
+    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-3>
       <ion-card-header color="secondary">
         Vacuna triple felina
       </ion-card-header>
@@ -105,14 +107,14 @@
         su vida.
       </ion-card-content>
     </ion-card>
-    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-4>
+    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-3>
       <ion-card-header color="secondary">
         Vacuna antirrábica
       </ion-card-header>
       <ion-card-content>Es una vacuna que es común para ambas especies. Es obligatoria por ley desde los dos meses y cada un año. La rabia
         es una enfermedad mortal, que ataca a animales y humanos, siendo fundamental la vacunación para prevenirla.</ion-card-content>
     </ion-card>
-    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-4>
+    <ion-card col-12 col-md-8 offset-md-3 col-lg-7 offset-lg-3>
       <ion-card-header color="secondary">Vacuna contra la leucemia felina</ion-card-header>
       <ion-card-content>Sólo deben vacunarse los gatos que no tienen el virus de la leucemia felina, lo que se puede saber fácilmente mediante
         una prueba. Es importante realizarla lo antes posible, porque este virus puede desencadenar en cáncer y es altamente
